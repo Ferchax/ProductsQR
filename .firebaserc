@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "productsqr-f48f0": {
+      "hosting": {
+        "ProductsQR": [
+          "productsqr-f48f0"
+        ]
+      }
+    }
+  }
+}
