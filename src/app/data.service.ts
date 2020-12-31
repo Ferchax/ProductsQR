@@ -11,7 +11,7 @@ import { Product } from './product';
 })
 export class DataService {
     
-    private REST_API_SERVER = "http://localhost:3000/products";    
+    private REST_API_SERVER = "https://localhost:5001/api/products";    
 
     public first: string = "";
     public prev: string = "";
@@ -63,7 +63,7 @@ export class DataService {
         //Add safe, URL encoded_page parameter
         return this.httpClient
             .get<Product[]>(this.REST_API_SERVER, {
-                params: new HttpParams({fromString: "_page=1&_limit=10"}), 
+                params: new HttpParams({fromString: "_page=1&_limit=3"}), 
                 observe: "response"})
             .pipe(delay(5000))
             .pipe(retry(3), catchError(this.handleError), tap(res => {
