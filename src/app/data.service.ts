@@ -10,8 +10,8 @@ import { Product } from './product';
     providedIn: 'root'
 })
 export class DataService {
-    //private REST_API_SERVER = "https://localhost:5001/weatherforecast";
-    private REST_API_SERVER = "http://localhost:3000/products";
+    
+    private REST_API_SERVER = "http://localhost:3000/products";    
 
     public first: string = "";
     public prev: string = "";
