@@ -11,7 +11,7 @@ import { Product } from './product';
 })
 export class DataService {
     
-    private REST_API_SERVER = "https://localhost:5001/api/products";    
+    private REST_API_SERVER = "https://webapiproductsqr.azurewebsites.net/api/products";
 
     public first: string = "";
     public prev: string = "";
@@ -65,7 +65,7 @@ export class DataService {
             .get<Product[]>(this.REST_API_SERVER, {
                 params: new HttpParams({fromString: "_page=1&_limit=3"}), 
                 observe: "response"})
-            .pipe(delay(5000))
+            .pipe(delay(3000))
             .pipe(retry(3), catchError(this.handleError), tap(res => {
                console.log(res.headers.get('Link'));
                this.parseLinkHeader(res.headers.get('Link') || '{}');
@@ -75,7 +75,7 @@ export class DataService {
     public sendGetRequestToUrl(url: string) {
         return this.httpClient
             .get<Product[]>(url, { observe: "response"})
-            .pipe(delay(3000))
+            .pipe(delay(1500))
             .pipe(retry(3), catchError(this.handleError), tap(res => {
                 console.log(res.headers.get('Link'));
                 this.parseLinkHeader(res.headers.get('Link') || '{}');
