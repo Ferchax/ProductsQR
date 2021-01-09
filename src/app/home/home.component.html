@@ -13,7 +13,7 @@
                 <qrcode [qrdata]="product.id" [errorCorrectionLevel]="'M'"></qrcode>
             </div>
             <p>{{product.description}}</p>
-            <div>Precio: {{product.price}}</div>
+            <div>Cantidad: {{product.quantity}} - Precio: {{product.price}}</div>
         </mat-card-content>
         <mat-card-actions>
             <button mat-button>Pedir</button>
